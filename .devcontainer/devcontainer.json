@@ -1,0 +1,21 @@
+{
+  "name": "Voicebox - Mobile Web",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true,
+      "installDockerBuildx": true
+    }
+  },
+  "forwardPorts": [17600],
+  "portsAttributes": {
+    "17600": {
+      "label": "Voicebox Web UI",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/start-voicebox.sh",
+  "remoteUser": "vscode"
+}
